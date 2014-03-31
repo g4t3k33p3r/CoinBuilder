@@ -1,4 +1,3 @@
-#A bash script to quickly help generate a cryptocurrency
 ####################################################
 # Coin Builder Assist
 ####################################################
@@ -25,21 +24,24 @@ echo
 echo "Enter choice" 
 read choice 
 case $choice in 
-1)git clone https://github.com/dumbcoin-project/dumbcoin.git
+1)git clone https://github.com/litecoin-project/litecoin.git
 echo "Done, press [ENTER] to continue ..."
   read junk;;
 ###ENTER COIN NAME HERE eg,s/dumbcoin/yourcoin/g ##################
 2)echo "Generating Coin Name ..."
-find ./ -type f -exec sed -i -e 's/dumbcoin/dumbcoin/g' {} \;
+find ./ -type f -exec sed -i -e 's/litecoin/dumbcoin/g' {} \;
 echo "Step 1 completed."
-find ./ -type f -exec sed -i -e 's/Dumbcoin/Dumbcoin/g' {} \;
+find ./ -type f -exec sed -i -e 's/Litecoin/Dumbcoin/g' {} \;
 echo "Step 2 completed."
-find ./ -type f -exec sed -i -e 's/DumbCoin/DumbCoin/g' {} \;
+find ./ -type f -exec sed -i -e 's/LiteCoin/DumbCoin/g' {} \;
 echo "Step 3 completed."
-find ./ -type f -exec sed -i -e 's/DUMBCOIN/DUMBCOIN/g' {} \;
+find ./ -type f -exec sed -i -e 's/LITECOIN/DUMBCOIN/g' {} \;
 echo "Step 4 completed."
 find ./ -type f -exec sed -i -e 's/LTC/DMB/g' {} \;
 echo "Step 5 completed. Press [ENTER] to continue ..."
+###Uncomment and replace the following lines for coins using symbols####
+#find ./ -type f -exec sed -i -e 's/L\/₪/g' {} \;
+#echo "Step 6 completed. Press [ENTER] to continue ..."
 read junk;;
 #####################################################
 ###QT AND MAKE SECTION###############################
@@ -63,3 +65,5 @@ sleep 1
 esac 
 done 
 echo "Exiting ..."
+
+

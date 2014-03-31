@@ -1,0 +1,65 @@
+#A bash script to quickly help generate a cryptocurrency
+####################################################
+# Coin Builder Assist
+####################################################
+clear
+echo "Please wait ..."
+sleep 1
+clear
+quit=n 
+while [  "$quit"   =   "n"  ] 
+do 
+echo -e "\e[40;38;5;82m Coin Builder Assist \e[30;48;5;82m 1ARAtHE4N438FNVU8cRB9N6XYFumQWB7Rm \e[0m"
+sleep 1
+echo
+echo "*******************************************"
+echo "1. Clone LiteCoin from git" 
+echo "2. Generate Named Coin" 
+echo "3. Make Tool"
+echo "4. Read Help File"
+echo "5. Download Genesis Maker"
+echo "6. Install libboost1.49-all-dev"
+echo "Q. Quit" 
+echo "*******************************************"
+echo 
+echo "Enter choice" 
+read choice 
+case $choice in 
+1)git clone https://github.com/dumbcoin-project/dumbcoin.git
+echo "Done, press [ENTER] to continue ..."
+  read junk;;
+###ENTER COIN NAME HERE eg,s/dumbcoin/yourcoin/g ##################
+2)echo "Generating Coin Name ..."
+find ./ -type f -exec sed -i -e 's/dumbcoin/dumbcoin/g' {} \;
+echo "Step 1 completed."
+find ./ -type f -exec sed -i -e 's/Dumbcoin/Dumbcoin/g' {} \;
+echo "Step 2 completed."
+find ./ -type f -exec sed -i -e 's/DumbCoin/DumbCoin/g' {} \;
+echo "Step 3 completed."
+find ./ -type f -exec sed -i -e 's/DUMBCOIN/DUMBCOIN/g' {} \;
+echo "Step 4 completed."
+find ./ -type f -exec sed -i -e 's/LTC/DMB/g' {} \;
+echo "Step 5 completed. Press [ENTER] to continue ..."
+read junk;;
+#####################################################
+###QT AND MAKE SECTION###############################
+3)echo "Bulding ..."
+make clean
+#Edit the following line to reflect your coin name###
+qmake dumbcoin-qt.pro 
+#####################################################
+make -j2
+read junk;;
+4)gedit help.md
+read junk;;
+5)git clone https://github.com/lhartikk/GenesisH0.git
+echo "Press [ENTER] to continue ..."
+read junk;;
+6)sudo apt-get install libboost1.49-all-dev
+read junk;;
+Q|q) quit=y;; 
+*) echo "Try Again" 
+sleep 1 
+esac 
+done 
+echo "Exiting ..."
